@@ -22,7 +22,15 @@ public partial class AddContactPage : ContentPage
 
     private async void SaveButton_Clicked(object sender, EventArgs e)
     {
-
+	if (string.IsNullOrEmpty(NameEntry.Text) string.IsNullEmpty(EmailEntry.Text))
+ 	{
+  		if (string.IsNullOrEmpty(NameEntry.Text)) popUpLayoutName.IsVisible = true;
+    		else popUpLayoutName.IsVisible = false;
+      		if (string.IsNullOrEmpty(EmailEntry.Text)) popUpLayoutEmail.IsVisible = true;
+		else popUpLayoutEmail.IsVisible = false;
+  		return;
+	}
+    
         ContactInfo contact = new ContactInfo
         {
             Name = NameEntry.Text,
