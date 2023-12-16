@@ -42,6 +42,13 @@
             <Label Text="E-posta alanını boş bırakmamalısın" VerticalOptions="Center" WidthRequest="500"></Label>
             </HorizontalStackLayout>
         </Frame>
+
+        <Frame x Name="deleteConfirmation" IsVisible="False">
+            <HorizontalStackLayout>
+            <Label Text="Bu dosyayı silmek istiyor musunuz?" VerticalOptions="Center" WidthRequest="500"></Label>
+            <Button Text="Sil" x:Name="DeleteConfirm" Clicked="DeleteConfirm_Clicked"></Button>
+            </HorizontalStackLayout>
+        </Frame>
         
         <Button Text="Kaydet" x:Name="SaveButton" Clicked="SaveButton_Clicked"></Button>
         <Button Text="Kayıt Sil" x:Name="DeleteButton" Clicked="DeleteButton_Clicked"></Button>
