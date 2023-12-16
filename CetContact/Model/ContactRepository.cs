@@ -40,5 +40,11 @@ namespace CetContact.Model
         {
             await database.UpdateAsync(contact);
         }
+
+        public async Task Delete(Int Id)
+        {
+            var contact = await database.Table<ContactInfo>().Where(c => c.Id == Id).FirstOrDefaultAsync();
+            await database.DeleteAsync(contact);
+        }    
     }
 }
