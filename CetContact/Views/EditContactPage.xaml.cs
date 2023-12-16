@@ -59,4 +59,15 @@ public partial class EditContactPage : ContentPage
     {
         await Shell.Current.GoToAsync("..");
     }
+
+    private void ButtonDelete_Clicked(object sender, EventArgs e)
+    {
+        deleteConfirmation.IsVisible = true;
+    }
+    
+    private async void ConfirmDelete_Clicked(object sender, EventArgs e)
+    {
+        await contactRepository.Delete(Int32.Parse(this.ContactId));
+	await Shell.Current.GoToAsync("..");
+    }
 }
