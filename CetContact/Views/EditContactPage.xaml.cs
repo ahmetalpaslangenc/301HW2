@@ -36,6 +36,15 @@ public partial class EditContactPage : ContentPage
     private  async void SaveButton_Clicked(object sender, EventArgs e)
     {
 
+    	if (string.IsNullOrEmpty(NameEntry.Text) string.IsNullEmpty(EmailEntry.Text))
+ 	{
+  		if (string.IsNullOrEmpty(NameEntry.Text)) popUpLayoutName.IsVisible = true;
+    		else popUpLayoutName.IsVisible = false;
+      		if (string.IsNullOrEmpty(EmailEntry.Text)) popUpLayoutEmail.IsVisible = true;
+		else popUpLayoutEmail.IsVisible = false;
+  		return;
+	}
+
         contactInfo.Name = NameEntry.Text;
         contactInfo.Phone = PhoneEntry.Text;
         contactInfo.Address = AdressEntry.Text;
